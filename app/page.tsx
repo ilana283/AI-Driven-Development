@@ -11,7 +11,9 @@ export default function Home() {
       <section className="mb-10 sm:mb-12" aria-labelledby="hero-heading">
         <Reveal>
           <Panel className="border-l-4 border-l-sky-500 pl-6">
-            <p className="mb-2 text-sm font-medium text-sky-800 dark:text-sky-300">{site.role}</p>
+            <p className="mb-2 text-sm font-medium text-zinc-700 dark:text-zinc-300">
+              {site.role}
+            </p>
             <h1
               id="hero-heading"
               className="font-sans text-3xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 sm:text-4xl"
@@ -21,7 +23,7 @@ export default function Home() {
             <p className="mt-4 max-w-2xl text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
               {site.tagline}
             </p>
-            <p className="mt-3 text-sm text-zinc-500 dark:text-zinc-400">{site.location}</p>
+            <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-400">{site.location}</p>
             <div className="mt-6 flex flex-wrap gap-3 text-sm font-medium">
               <Link
                 href="/about"

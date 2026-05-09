@@ -29,11 +29,11 @@ export type ProjectItem = {
 };
 
 export const site = {
-  /** Shown in browser tab, SEO, and header brand line */
+  /** Shown in browser tab, SEO, and <title> */
   siteTitle: "Ilana Priev · AIDD",
   name: "Ilana Priev",
-  /** Short label for course / program (shown next to logo in header) */
-  brandTag: "AIDD",
+  /** Text after “© {year}” in the footer — edit here (no “· AIDD” unless you add it) */
+  footerCredit: "Ilana Priev",
   /** Logo URL under `public/` (copy your `app/Logo.png` → `public/logo.png`) */
   logo: {
     src: "/logo.png",
@@ -49,6 +49,34 @@ export const site = {
   links: {
     email: "mailto:ilana.p283@gmail.com",
     linkedin: "https://www.linkedin.com/in/ilana-priev-amzaleg/",
+    /** Israeli mobile — tap-to-call / WhatsApp “click to chat” often starts from phone copy */
+    phone: "tel:+972526655621",
+  },
+  /** Shown as plain text on Contact (same address as mailto) */
+  emailAddress: "ilana.p283@gmail.com",
+  phoneDisplay: "052-6655621",
+  /** Contact page — edit all copy here */
+  contactPage: {
+    title: "Contact",
+    intro:
+      "Open to opportunities in system integration, validation, and multidisciplinary engineering. Reach me by email, LinkedIn, or phone.",
+    sections: {
+      email: {
+        title: "Email",
+        hint: "Best for CV, materials, and detailed messages.",
+        button: "Send email",
+      },
+      linkedin: {
+        title: "LinkedIn",
+        hint: "Profile and professional updates.",
+        button: "Open LinkedIn",
+      },
+      phone: {
+        title: "Phone",
+        hint: "Israel — you can also reach me on WhatsApp at this number.",
+        button: "Call",
+      },
+    },
   },
   nav: [
     { label: "Home", href: "/" },

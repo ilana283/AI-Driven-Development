@@ -16,9 +16,12 @@ export function Panel({
   );
 }
 
-export function SectionTitle({ children }: { children: ReactNode }) {
+export function SectionTitle({ id, children }: { id?: string; children: ReactNode }) {
   return (
-    <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-800 dark:text-sky-300">
+    <h2
+      id={id}
+      className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-800 dark:text-sky-300"
+    >
       {children}
     </h2>
   );

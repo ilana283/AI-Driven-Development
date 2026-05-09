@@ -29,7 +29,19 @@ export type ProjectItem = {
 };
 
 export const site = {
+  /** Shown in browser tab, SEO, and header brand line */
+  siteTitle: "Ilana Priev · AIDD",
   name: "Ilana Priev",
+  /** Short label for course / program (shown next to logo in header) */
+  brandTag: "AIDD",
+  /** Logo URL under `public/` (copy your `app/Logo.png` → `public/logo.png`) */
+  logo: {
+    src: "/logo.png",
+    alt: "Ilana Priev — personal portfolio",
+    /** Raster wordmark; height drives layout, width keeps aspect ratio */
+    width: 220,
+    height: 64,
+  },
   role: "System Integration Engineer",
   tagline:
     "Electrical and electronics engineer integrating complex multidisciplinary systems — calibration, validation, root-cause analysis, and measurable reliability.",

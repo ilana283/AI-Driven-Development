@@ -13,9 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ilana Priev",
+  title: {
+    default: "Ilana Priev · AIDD",
+    template: "%s · Ilana Priev AIDD",
+  },
   description:
-    "System Integration Engineer — electrical engineering background, multidisciplinary systems, testing, and optimization.",
+    "Ilana Priev — System Integration Engineer. AIDD course portfolio: multidisciplinary systems, testing, and optimization.",
 };
 
 export default function RootLayout({

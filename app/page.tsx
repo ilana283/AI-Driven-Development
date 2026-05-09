@@ -1,52 +1,15 @@
-import type { ReactNode } from "react";
+import * as React from "react";
+import Link from "next/link";
 import { site } from "./site";
-
-/** Shared card panel: border, soft background, accent stripe */
-function Panel({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return (
-    <div
-      className={`rounded-xl border border-zinc-200/90 bg-white/90 p-5 shadow-sm dark:border-zinc-700/90 dark:bg-zinc-900/60 ${className}`}
-    >
-      {children}
-    </div>
-  );
-}
-
-function SectionTitle({ id, children }: { id: string; children: ReactNode }) {
-  return (
-    <h2
-      id={id}
-      className="scroll-mt-28 text-sm font-semibold uppercase tracking-[0.2em] text-sky-800 dark:text-sky-300"
-    >
-      {children}
-    </h2>
-  );
-}
+import { Reveal } from "./components/Reveal";
+import { SiteShell } from "./components/SiteShell";
+import { Panel } from "./components/ui";
 
 export default function Home() {
   return (
-    <div className="min-h-full flex-1 bg-gradient-to-b from-zinc-100 via-zinc-50 to-white dark:from-zinc-950 dark:via-zinc-900 dark:to-black">
-      <header className="sticky top-0 z-10 border-b border-zinc-200/90 bg-white/90 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/90">
-        <div className="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-3 px-4 py-3">
-          <a href="#top" className="font-semibold text-zinc-900 dark:text-zinc-100">
-            {site.name}
-          </a>
-          <nav aria-label="Primary" className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-            {site.nav.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-zinc-600 transition hover:text-sky-700 dark:text-zinc-400 dark:hover:text-sky-300"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-      </header>
-
-      <main id="top" className="mx-auto w-full max-w-3xl flex-1 px-4 pb-20 pt-10 sm:pt-14">
-        <section className="mb-10 sm:mb-12" aria-labelledby="hero-heading">
+    <SiteShell>
+      <section className="mb-10 sm:mb-12" aria-labelledby="hero-heading">
+        <Reveal>
           <Panel className="border-l-4 border-l-sky-500 pl-6">
             <p className="mb-2 text-sm font-medium text-sky-800 dark:text-sky-300">{site.role}</p>
             <h1
@@ -59,170 +22,60 @@ export default function Home() {
               {site.tagline}
             </p>
             <p className="mt-3 text-sm text-zinc-500 dark:text-zinc-400">{site.location}</p>
-          </Panel>
-        </section>
-
-        <section id="about" className="mb-10 scroll-mt-28 sm:mb-12" aria-labelledby="about-heading">
-          <SectionTitle id="about-heading">About</SectionTitle>
-          <Panel className="mt-6 border-l-4 border-l-sky-500/80">
-            <div className="space-y-4 text-zinc-700 leading-relaxed dark:text-zinc-300">
-              {site.about.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+            <div className="mt-6 flex flex-wrap gap-3 text-sm font-medium">
+              <Link
+                href="/about"
+                className="rounded-xl bg-sky-600 px-4 py-2 text-white transition hover:bg-sky-500"
+              >
+                About me
+              </Link>
+              <Link
+                href="/projects"
+                className="rounded-xl border border-zinc-200 bg-white/70 px-4 py-2 text-zinc-900 transition hover:bg-white dark:border-zinc-700 dark:bg-zinc-900/40 dark:text-zinc-100 dark:hover:bg-zinc-900/70"
+              >
+                Projects
+              </Link>
+              <Link
+                href="/contact"
+                className="rounded-xl border border-zinc-200 bg-white/70 px-4 py-2 text-zinc-900 transition hover:bg-white dark:border-zinc-700 dark:bg-zinc-900/40 dark:text-zinc-100 dark:hover:bg-zinc-900/70"
+              >
+                Contact
+              </Link>
             </div>
           </Panel>
-        </section>
+        </Reveal>
+      </section>
 
-        <section
-          id="experience"
-          className="mb-10 scroll-mt-28 sm:mb-12"
-          aria-labelledby="experience-heading"
-        >
-          <SectionTitle id="experience-heading">Experience</SectionTitle>
-          <ul className="mt-6 space-y-5">
-            {site.experience.map((job) => (
-              <li key={`${job.company}-${job.title}-${job.start}`}>
-                <Panel className="border-l-4 border-l-sky-500/70">
-                  <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between">
-                    <div>
-                      <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                        {job.title}
-                      </h3>
-                      <p className="text-zinc-700 dark:text-zinc-300">
-                        {job.company}
-                        {job.location ? ` · ${job.location}` : ""}
-                      </p>
-                    </div>
-                    <p className="shrink-0 text-sm tabular-nums text-sky-800/90 dark:text-sky-300/90">
-                      {job.start} — {job.end}
+      <section aria-labelledby="featured-projects" className="mb-10 sm:mb-12">
+        <div className="flex items-baseline justify-between gap-4">
+          <h2
+            id="featured-projects"
+            className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-800 dark:text-sky-300"
+          >
+            Featured
+          </h2>
+          <Link href="/projects" className="text-sm text-zinc-600 hover:text-sky-700 dark:text-zinc-400">
+            View all
+          </Link>
+        </div>
+        <div className="mt-6 space-y-5">
+          {site.projects.slice(0, 2).map((project) => (
+            <Reveal key={project.name}>
+              <Panel className="border-l-4 border-l-sky-500">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                  <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">{project.name}</h3>
+                  {project.tech?.length ? (
+                    <p className="shrink-0 font-mono text-xs text-sky-900/80 dark:text-sky-300/90">
+                      {project.tech.join(" · ")}
                     </p>
-                  </div>
-                  <ul className="mt-4 list-disc space-y-2 pl-5 text-zinc-700 leading-relaxed dark:text-zinc-300">
-                    {job.bullets.map((bullet) => (
-                      <li key={bullet}>{bullet}</li>
-                    ))}
-                  </ul>
-                </Panel>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section
-          id="education"
-          className="mb-10 scroll-mt-28 sm:mb-12"
-          aria-labelledby="education-heading"
-        >
-          <SectionTitle id="education-heading">Education</SectionTitle>
-          <ul className="mt-6 space-y-5">
-            {site.education.map((edu) => (
-              <li key={`${edu.school}-${edu.start}`}>
-                <Panel className="border-l-4 border-l-sky-500/70">
-                  <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between">
-                    <div>
-                      <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                        {edu.degree}
-                      </h3>
-                      <p className="text-zinc-700 dark:text-zinc-300">
-                        {edu.school}
-                        {edu.location ? ` · ${edu.location}` : ""}
-                      </p>
-                    </div>
-                    <p className="shrink-0 text-sm tabular-nums text-sky-800/90 dark:text-sky-300/90">
-                      {edu.start} — {edu.end}
-                    </p>
-                  </div>
-                  {edu.highlights?.map((h) => (
-                    <p key={h} className="mt-4 text-zinc-700 leading-relaxed dark:text-zinc-300">
-                      {h}
-                    </p>
-                  ))}
-                </Panel>
-              </li>
-            ))}
-          </ul>
-          <Panel className="mt-5 border-l-4 border-l-amber-500/80 bg-amber-50/50 dark:bg-amber-950/20">
-            <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">{site.military}</p>
-            <p className="mt-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-              <span className="font-medium text-zinc-800 dark:text-zinc-200">Languages: </span>
-              {site.languages}
-            </p>
-          </Panel>
-        </section>
-
-        <section
-          id="projects"
-          className="mb-10 scroll-mt-28 sm:mb-12"
-          aria-labelledby="projects-heading"
-        >
-          <SectionTitle id="projects-heading">Projects</SectionTitle>
-          <ul className="mt-6 space-y-5">
-            {site.projects.map((project) => (
-              <li key={project.name}>
-                <Panel className="border-l-4 border-l-sky-500">
-                  <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-                    <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                      {project.href ? (
-                        <a
-                          href={project.href}
-                          className="underline decoration-sky-600/40 underline-offset-4 transition hover:decoration-sky-600 dark:decoration-sky-400/50 dark:hover:decoration-sky-300"
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          {project.name}
-                        </a>
-                      ) : (
-                        project.name
-                      )}
-                    </h3>
-                    {project.tech && project.tech.length > 0 && (
-                      <p className="shrink-0 font-mono text-xs text-sky-900/80 dark:text-sky-300/90">
-                        {project.tech.join(" · ")}
-                      </p>
-                    )}
-                  </div>
-                  <p className="mt-3 text-zinc-700 leading-relaxed dark:text-zinc-300">
-                    {project.description}
-                  </p>
-                </Panel>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section id="contact" className="scroll-mt-28" aria-labelledby="contact-heading">
-          <SectionTitle id="contact-heading">Contact</SectionTitle>
-          <Panel className="mt-6 border-l-4 border-l-sky-500">
-            <p className="text-zinc-700 leading-relaxed dark:text-zinc-300">
-              Reach out for collaboration or opportunities.
-            </p>
-            <ul className="mt-5 flex flex-wrap gap-6 text-sm font-medium">
-              <li>
-                <a
-                  href={site.links.email}
-                  className="rounded-md text-sky-700 underline decoration-sky-600/40 underline-offset-4 transition hover:bg-sky-50 hover:decoration-sky-700 dark:text-sky-400 dark:hover:bg-sky-950/50 dark:hover:decoration-sky-300"
-                >
-                  Email
-                </a>
-              </li>
-              <li>
-                <a
-                  href={site.links.linkedin}
-                  className="rounded-md text-sky-700 underline decoration-sky-600/40 underline-offset-4 transition hover:bg-sky-50 hover:decoration-sky-700 dark:text-sky-400 dark:hover:bg-sky-950/50 dark:hover:decoration-sky-300"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  LinkedIn
-                </a>
-              </li>
-            </ul>
-          </Panel>
-        </section>
-      </main>
-
-      <footer className="border-t border-zinc-200/90 bg-white/80 py-8 text-center text-sm text-zinc-500 dark:border-zinc-800 dark:bg-zinc-950/80 dark:text-zinc-400">
-        <p>© {new Date().getFullYear()} {site.name}</p>
-      </footer>
-    </div>
+                  ) : null}
+                </div>
+                <p className="mt-3 text-zinc-700 leading-relaxed dark:text-zinc-300">{project.description}</p>
+              </Panel>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+    </SiteShell>
   );
 }

@@ -39,11 +39,10 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/ilana-priev-amzaleg/",
   },
   nav: [
-    { label: "About", href: "#about" },
-    { label: "Experience", href: "#experience" },
-    { label: "Education", href: "#education" },
-    { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Projects", href: "/projects" },
+    { label: "Contact", href: "/contact" },
   ] satisfies SiteLink[],
   about: [
     "Hands-on experience integrating complex multidisciplinary systems with end-to-end ownership of calibration, testing, and validation.",

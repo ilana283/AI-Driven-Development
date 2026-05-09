@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   },
   description:
     "Ilana Priev — System Integration Engineer. AIDD course portfolio: multidisciplinary systems, testing, and optimization.",
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({

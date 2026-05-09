@@ -25,9 +25,6 @@ export function SiteShell({ children }: SiteShellProps) {
               className="h-10 w-auto max-w-[min(220px,55vw)] shrink-0 object-contain object-left"
               priority
             />
-            <span className="rounded-md border border-sky-200 bg-sky-50 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-sky-800 dark:border-sky-800 dark:bg-sky-950/60 dark:text-sky-200">
-              {site.brandTag}
-            </span>
             <span className="sr-only">{site.siteTitle}</span>
           </Link>
           <nav aria-label="Primary" className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
@@ -48,7 +45,7 @@ export function SiteShell({ children }: SiteShellProps) {
 
       <footer className="border-t border-zinc-200/90 bg-white/80 py-8 text-center text-sm text-zinc-500 dark:border-zinc-800 dark:bg-zinc-950/80 dark:text-zinc-400">
         <p>
-          © {new Date().getFullYear()} {site.siteTitle}
+          © {new Date().getFullYear()} {site.footerCredit}
         </p>
       </footer>
     </div>

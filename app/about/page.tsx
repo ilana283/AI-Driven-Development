@@ -12,9 +12,8 @@ export default function AboutPage() {
             <h1 id="about-title" className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
               About
             </h1>
-            <p className="mt-3 text-zinc-700 leading-relaxed dark:text-zinc-300">
-              {site.role} · {site.location}
-            </p>
+            <p className="mt-3 text-zinc-700 leading-relaxed dark:text-zinc-300">{site.role}</p>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{site.location}</p>
           </Panel>
         </Reveal>
       </section>
@@ -90,15 +89,7 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
-        <Reveal>
-          <Panel className="mt-5 border-l-4 border-l-amber-500/80 bg-amber-50/50 dark:bg-amber-950/20">
-            <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">{site.military}</p>
-            <p className="mt-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-              <span className="font-medium text-zinc-800 dark:text-zinc-200">Languages: </span>
-              {site.languages}
-            </p>
-          </Panel>
-        </Reveal>
+        {/* Intentionally removed: military & languages block (per request) */}
       </section>
     </SiteShell>
   );

@@ -221,9 +221,7 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-zinc-200/90 bg-white/80 py-8 text-center text-sm text-zinc-500 dark:border-zinc-800 dark:bg-zinc-950/80 dark:text-zinc-400">
-        <p>
-          © {new Date().getFullYear()} {site.name}
-        </p>
+        <p>© {new Date().getFullYear()} {site.name}</p>
       </footer>
     </div>
   );

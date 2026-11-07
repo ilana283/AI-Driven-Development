@@ -78,8 +78,8 @@ export const site = {
     "Electrical and Electronics engineer with hands-on experience in hardware systems, embedded development, PCB design and multidisciplinary system integration.",
   links: {
     email: "mailto:ilana.p283@gmail.com",
-    linkedin: "https://www.linkedin.com/in/ilana-priev-amzaleg/",
-    github: "https://github.com/ilana283",
+    linkedin: "https://linkedin.com",
+    github: "https://github.com",
   },
   emailAddress: "ilana.p283@gmail.com",
   nav: [
@@ -205,7 +205,7 @@ export const site = {
       description:
         "Real-time insect detection on Raspberry Pi with YOLOv7 for houseplants — video capture, identification and CSV logging to reduce pesticide use.",
       githubHref:
-        "https://github.com/ilana283/System-for-monitoring-and-identifying-insects-in-plants",
+        "https://github.com/System-for-monitoring-and-identifying-insects-in-plants",
       tech: ["Python", "YOLOv7", "Raspberry Pi"],
     },
     {
@@ -220,7 +220,7 @@ export const site = {
       name: "Personal portfolio",
       description:
         "This site — a fast Next.js portfolio with content in site.ts, deployed on Vercel for the AI-Driven Development course.",
-      githubHref: "https://github.com/ilana283/AI-Driven-Development",
+      githubHref: "https://github.com/AI-Driven-Development",
       tech: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     },
   ] satisfies ProjectItem[],
@@ -231,5 +231,7 @@ export const site = {
       "Ask me about Ilana’s experience, skills, education, projects, or training — based on this portfolio only.",
     limitReached:
       "You’ve used all 3 questions for this visit. For anything else, please email Ilana directly.",
+    avatarSrc: "/profile.jpg",
+    avatarAlt: "Ilana Priev — AI Assistant",
   },
 };

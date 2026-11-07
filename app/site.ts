@@ -160,8 +160,16 @@ export const site = {
   ] satisfies ExperienceItem[],
   education: [
     {
+      degree: "M.Sc. in Systems Engineering",
+      school: "Ben-Gurion University of the Negev",
+      location: "Beer Sheva",
+      start: "2026",
+      expected end: "2028",
+    },
+    {
       degree: "B.Sc. Electrical and Electronics Engineering",
-      school: "HIT, Holon",
+      school: "HIT",
+      location: "Holon",
       start: "2020",
       end: "2024",
     },
@@ -175,12 +183,12 @@ export const site = {
     },
   ] satisfies EducationItem[],
   training: [
-    {
-      title: "Independent Practical Board Design Training",
-      period: "Ongoing",
-      description:
-        "Hands-on self-directed training in PCB design workflows, schematic analysis, layout, signal routing and hardware design best practices.",
-    },
+    //{
+    //  title: "Independent Practical Board Design Training",
+    //  period: "Ongoing",
+    //  description:
+    //    "Hands-on self-directed training in PCB design workflows, schematic analysis, layout, signal routing and hardware design best practices.",
+    //},
     {
       title: "AI-Driven Development",
       provider: "HIT, Holon",

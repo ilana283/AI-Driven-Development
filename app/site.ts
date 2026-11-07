@@ -233,5 +233,7 @@ export const site = {
       "You’ve used all 3 questions for this visit. For anything else, please email Ilana directly.",
     avatarSrc: "/profile.jpg",
     avatarAlt: "Ilana Priev — AI Assistant",
+    offTopicReply:
+      "I can only answer questions related to Ilana's professional portfolio, skills, and background.",
   },
 };

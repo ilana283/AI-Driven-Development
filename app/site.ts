@@ -164,7 +164,7 @@ export const site = {
       school: "Ben-Gurion University of the Negev",
       location: "Beer Sheva",
       start: "2026",
-      expected end: "2028",
+      end: "2028",
     },
     {
       degree: "B.Sc. Electrical and Electronics Engineering",
@@ -231,7 +231,5 @@ export const site = {
       "Ask me about Ilana’s experience, skills, education, projects, or training — based on this portfolio only.",
     limitReached:
       "You’ve used all 3 questions for this visit. For anything else, please email Ilana directly.",
-    offTopicReply: `I can only answer questions about Ilana’s portfolio content on this site. For other topics, please email Ilana at ilana.p283@gmail.com.`,
-    avatarAlt: "Ilana Priev — portfolio assistant",
   },
 };

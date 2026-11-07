@@ -183,12 +183,6 @@ export const site = {
     },
   ] satisfies EducationItem[],
   training: [
-    //{
-    //  title: "Independent Practical Board Design Training",
-    //  period: "Ongoing",
-    //  description:
-    //    "Hands-on self-directed training in PCB design workflows, schematic analysis, layout, signal routing and hardware design best practices.",
-    //},
     {
       title: "AI-Driven Development",
       provider: "HIT, Holon",

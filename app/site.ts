@@ -162,7 +162,6 @@ export const site = {
     {
       degree: "M.Sc. in Systems Engineering",
       school: "Ben-Gurion University of the Negev",
-      location: "Beer Sheva",
       start: "2026",
       end: "2028",
     },

@@ -189,7 +189,7 @@ export const site = {
       period: "2026",
       description:
         "Professional workshop on AI-Driven Development — systematic use of Cursor AI, Git and static analysis to deliver a production Next.js portfolio with full code ownership and documented review loops.",
-    },
+    }
   ] satisfies TrainingItem[],
   projects: [
     {
